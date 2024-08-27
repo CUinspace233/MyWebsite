@@ -1,0 +1,16 @@
+h1
+        {
+            text-align: center;
+            font-size: 40px;
+            color: #ffffff;
+        }
+        p
+        {
+            text-align: center;
+            font-size: 30px;
+            color: #ffffff;
+        }
+        body
+        {
+            background-image: url("img/bc.jpg");
+        }

@@ -1,0 +1,136 @@
+<!--个人网站-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="keywords" content="个人网站">
+    <meta name="description" content="个人网站">
+    <meta name="author" content="cuinsapce">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" media="print" href="print.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 512px) and (max-width: 1024px)" href="screen512to1024.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script type="text/javascript" src="hi.js"></script><!--在js后用defer来实现-->
+    <noscript>您的浏览器不支持JavaScript!请升级或更换您的浏览器</noscript>
+    <title>cuinspace个人网站</title>
+</head>
+<body>
+<div class="welcome">
+    <h1>欢迎!</h1>
+    <p>欢迎进入我的个人网站！</p>
+    <p>本站是由cuinspace创建的个人网站</p>
+    <!-- 显示当前年月日 -->
+    <p id="time"></p>
+    <script>
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth() + 1;
+        var day = today.getDate();
+        document.getElementById("time").innerHTML = year + "年" + month + "月" + day + "日";
+    </script>
+    <!-- 显示当前时间 -->
+    <p id="clock"></p>
+    <script>
+        function startTime() 
+        {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // add a zero in front of numbers<10
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+            t = setTimeout(function() 
+            {
+                startTime()
+            }, 500);
+        }
+
+        function checkTime(i) 
+        {
+            if (i < 10) 
+            {
+                i = "0" + i;
+            }
+            return i;
+        }
+        startTime();
+    </script>
+    
+    <script>
+        //prompt取过来的值是字符型的
+        var myname, account, password;
+
+        //引入注册函数
+        function register() 
+        {
+            // 获取用户输入的信息
+            const myname = prompt("请输入您的名字：");
+            if (myname == null) {
+                return;
+            }
+            const account = prompt("请输入您想注册的账号：");
+            if (account == null) {
+                return;
+            }
+            const password = prompt("请输入您想设置的密码：");
+            if (password == null) {
+                return;
+            }
+
+            // 发送注册请求到后端
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: myname, account, password }),
+            })
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error('注册失败:', error));
+        }
+
+        function login() 
+        {
+            // 获取用户输入的信息
+            const myname = prompt("请输入您的名字：");
+            if (myname == null) {
+                return;
+            }
+
+            const accountInput = prompt("请输入您的账号：");
+            if (accountInput == null) {
+                return;
+            }
+            const passwordInput = prompt("请输入您的密码：");
+            if (passwordInput == null) {
+                return;
+            }
+
+            // 发送登录请求到后端
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: myname, account: accountInput, password: passwordInput }),
+            })
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error('登录失败:', error));
+        }
+    </script>
+    
+    <!-- 设置一个按钮并居中 -->
+    <div style="text-align: center;">
+        <input type="button" value="注册" onclick="register()" style="color: #0062ff; font-size: 20px;">
+    </div>
+    <div style="text-align: center;">
+        <input type="button" value="登陆" onclick="login()" style="margin-top:1%; color: #0062ff;font-size: 20px;">
+    </div>
+</div>
+</body>
+</html>
