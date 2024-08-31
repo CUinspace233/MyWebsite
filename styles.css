@@ -1,16 +1,163 @@
 h1
-        {
-            text-align: center;
-            font-size: 40px;
-            color: #ffffff;
-        }
-        p
-        {
-            text-align: center;
-            font-size: 30px;
-            color: #ffffff;
-        }
-        body
-        {
-            background-image: url("img/bc.jpg");
-        }
+{
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+}
+p
+{
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+}
+body
+{
+    background-image: url("img/bc.jpg");
+}
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.raleway-title-bold {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.raleway-paragraph-regular {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.raleway-paragraph-light {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}        
+.rubik-title-bold {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.rubik-paragraph-regular {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.rubik-paragraph-light {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+.rubik-paragraph-bold {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.rubik-paragraph-italic {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+}
+#time, #clock {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0;
+    text-align: right;
+}
+
+/* 使两个元素堆叠显示 */
+#clock {
+    margin-top: 20px;
+}
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-card {
+    background-color: rgb(227, 131, 227);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    color: rgb(102, 9, 102);
+}
+
+.form-card input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.form-card button {
+    width: 100%;
+    padding: 10px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.form-card button:hover {
+    background-color: purple;
+}
+.switch-link {
+    font-family: "Rubik", sans-serif;
+    margin-top: 15px;
+    font-size: 1em;
+    color: rgb(255, 207, 215);
+}
+
+.switch-link a {
+    font-family: "Rubik", sans-serif;
+    color: #0062ff;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.message.success {
+    color: #28a745;
+}
+
+.message.error {
+    color: #dc3545;
+}
